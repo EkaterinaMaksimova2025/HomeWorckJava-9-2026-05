@@ -320,6 +320,23 @@ public class RadioTest {
 
     }
 
+    /// //////////////////////////////////////////////
+    @Test
+    public void zeroStationPrev() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(0);
+
+        radio.prev();
+
+        int expected = 9;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    /// /////////////////////////////////////////////////
+
     @Test
     public void firstMinStationPrev() {
         Radio radio = new Radio();
@@ -342,20 +359,6 @@ public class RadioTest {
         radio.prev();
 
         int expected = 1;
-        int actual = radio.getCurrentStation();
-
-        Assertions.assertEquals(expected, actual);
-
-    }
-
-    @Test
-    public void zeroStationPrev() {
-        Radio radio = new Radio();
-        radio.setCurrentStation(0);
-
-        radio.prev();
-
-        int expected = 9;
         int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
